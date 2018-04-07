@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <hello/>
+    <Countdown/>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Countdown from './components/Countdown'
+import Todolist from './components/TodoList'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    Countdown,
+    Todolist
   }
 }
 </script>
@@ -21,7 +23,6 @@ body {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
