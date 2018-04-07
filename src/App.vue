@@ -1,19 +1,13 @@
 <template>
   <div id="app">
-    <Countdown/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Countdown from './components/Countdown'
-import Todolist from './components/TodoList'
 
 export default {
-  name: 'app',
-  components: {
-    Countdown,
-    Todolist
-  }
+  name: 'app'
 }
 </script>
 
