@@ -10,6 +10,7 @@ script:
   - yarn build
 deploy:
   provider: firebase
+  skip-cleanup: true
   token:
     secure: $FIREBASE_TOKEN
   project: "all-about-salary"
