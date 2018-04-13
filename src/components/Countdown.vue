@@ -122,7 +122,7 @@ export default {
 .count {
   font-size: 11rem;
   background: -webkit-linear-gradient(90deg, hsl(48, 100%, 67%), white	, hsl(48, 100%, 67%));
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 
 }
