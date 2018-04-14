@@ -3,10 +3,8 @@
     <div class="dp-flex al-it-center f-drt-column">
       <div class="menu">TODOLIST</div>
       <div class="sub-menu">(AFTER SALARY COME)</div>
-      <div :key="index" v-for="(list, index) in todo">
-        <ul>
-          <li>{{list.list}} : {{list.price}}</li>
-        </ul>
+      <div class="dp-flex al-it-flex-start w-100pct">
+        <b-checkbox :key="index" v-for="(list, index) in todo">{{list.list}} : {{list.price}}</b-checkbox>
       </div>
       <div>
         <b-field>
@@ -23,7 +21,9 @@
 export default {
   data () {
     return {
-      todo: [],
+      todo: [
+        {list: 'gg', price: 500}
+      ],
       list: '',
       price: 0
     }
