@@ -3,13 +3,15 @@
     <div class="dp-flex al-it-center f-drt-column">
       <div class="menu">TODOLIST</div>
       <div class="sub-menu">(AFTER SALARY COME)</div>
-      <div class="dp-flex al-it-flex-start w-100pct pd-5px">
-        <b-checkbox :key="index" v-for="(list, index) in todo">{{list.list}} : {{list.price}}</b-checkbox>
+      <div class="dp-flex f-drt-column al-it-flex-start w-100pct pd-5px">
+        <div :key="index" v-for="(list, index) in todo">
+          <b-checkbox>{{list.list}} : {{list.price}}</b-checkbox>
+        </div>
       </div>
       <div>
         <b-field>
-            <b-input class="mg-5px" v-model="list" placeholder="Add List"></b-input>
-            <b-input class="mg-5px w-30pct" v-model="price" type="number" placeholder="Price"></b-input>
+            <b-input class="mg-5px" v-model="list" placeholder="Add List" @keyup.enter.native="addToList(list, price)"></b-input>
+            <b-input min="0" class="mg-5px w-30pct" v-model="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)"></b-input>
             <button class="button is-primary mg-5px" @click="addToList(list, price)">Add</button>
         </b-field>
       </div>
@@ -22,6 +24,7 @@ export default {
   data () {
     return {
       todo: [
+        {list: 'gg', price: 500},
         {list: 'gg', price: 500}
       ],
       list: '',
@@ -30,10 +33,22 @@ export default {
   },
   methods: {
     addToList (list, price) {
-      this.todo.push({
-        list,
-        price
-      })
+      if ((list.trim()) !== '' && +price !== 0) {
+        this.todo.push({
+          list,
+          price
+        })
+      } else if (list.trim() === '') {
+        this.$toast.open({
+          type: 'is-danger',
+          message: 'ไม่เห็นมีอะไรให้เพิ่ม'
+        })
+      } else {
+        this.$toast.open({
+          type: 'is-danger',
+          message: 'ไม่มีราคาจะเพิ่มทำไม'
+        })
+      }
     }
   }
 }
