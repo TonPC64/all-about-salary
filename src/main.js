@@ -7,6 +7,7 @@ import router from './router'
 
 import 'buefy/lib/buefy.css'
 import 'begeta/css/begeta.min.css'
+import 'mdi/css/materialdesignicons.min.css'
 
 Vue.use(Buefy)
 Vue.config.productionTip = false
