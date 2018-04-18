@@ -46,7 +46,7 @@ export default {
   },
   data () {
     return {
-      ShowAddList: false,
+      ShowAddList: true,
       todo: [
         {list: 'check', price: 500, checked: true},
         {list: 'gg', price: 5000, checked: false}

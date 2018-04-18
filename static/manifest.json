@@ -1,6 +1,6 @@
 {
-  "name": "countdown-salary",
-  "short_name": "Salary",
+  "name": "ALL ABOUT SALARY 💸",
+  "short_name": "💸 SALARY",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",
@@ -15,6 +15,6 @@
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "background_color": "#3a7bd5",
+  "theme_color": "#3a7bd5"
 }
