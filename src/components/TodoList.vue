@@ -16,7 +16,7 @@
       </div>
       <b-field v-else>
         <input class="custom-input mg-5px" v-model="list" placeholder="Add List" @keyup.enter="addToList(list, price)"/>
-        <input min="0" class="custom-input mg-5px w-30pct" v-model="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)"/>
+        <input min="0" class="custom-input mg-5px w-40pct" v-model="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)"/>
         <button  class="button mg-7px add-btn" @click="addToList(list, price)">
           <b-icon icon="plus"></b-icon>
         </button>

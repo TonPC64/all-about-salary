@@ -9,10 +9,9 @@ before_script:
 script: 
   - yarn build
 deploy:
-  provider: firebase
+  provider: surge
+  project: ./static/
+  domain: ab-salary.surge.sh  
   skip-cleanup: true
-  token:
-    secure: $FIREBASE_TOKEN
-  project: "all-about-salary"
   on:
     branch: master
