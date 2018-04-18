@@ -30,7 +30,6 @@ body {
   border-radius: 20px;
   padding: 10px;
   position: relative;
-  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
 @media only screen and (min-width: 412px)  {
   .app {

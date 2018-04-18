@@ -1,25 +1,25 @@
 <template>
-  <div class="app">
-    <div class="title top">
+  <div class="app bg">
+    <div class="title top cl-white bd-bt-st-solid">
       COUNTDOWN SALARY
     </div>
     <div class="title flex">
-      <div class="mid">
+      <div class="mid cl-white">
         อีก
       </div>
       <div class="count">
         {{countdown}}
       </div>
-      <div class="mid">
+      <div class="mid cl-white">
         วัน
       </div>
     </div>
-    <div class="money">
+    <div class="money cl-white">
       ใช้เงินได้วันละ
       <div class="money-number" :class="{'green': perday >= 150, 'red': perday < 100}">{{perday}}</div>
        บาท
     </div>
-    <section class="columns is-mobile">
+    <section class="columns is-mobile mg-t-5px">
         <b-field class="column" label="เงินเดือนจะเข้า">
             <b-select v-model="select" placeholder="เลือกวันที่">
                 <option
@@ -91,8 +91,10 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
+.bg {
+  background: linear-gradient(to right, #00d2ff, #3a7bd5);
+}
 .title {
   color: #fff;
   text-align: center;
@@ -110,10 +112,10 @@ export default {
   font-size: 2.1rem;
 }
 .green {
-  color: hsl(217, 71%, 53%);
+  color: #00ffbf;
 }
 .red {
-  color: hsl(348, 100%, 61%);
+  color: #ff0040;
 }
 .money-number {
   margin:0 5px;
@@ -122,7 +124,7 @@ export default {
 .count {
   font-size: 11rem;
   background: -webkit-linear-gradient(90deg, hsl(48, 100%, 67%), white	, hsl(48, 100%, 67%));
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
 }
@@ -135,5 +137,6 @@ export default {
   display: flex;
   align-items: center;
   font-size: 3rem;
+  margin-top: 30px;
 }
 </style>

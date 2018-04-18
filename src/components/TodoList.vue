@@ -1,30 +1,34 @@
 <template>
-  <div>
+  <div class="app bg cl-white">
     <div class="dp-flex al-it-center f-drt-column">
-      <div class="menu f-w-bold">TODOLIST</div>
-      <div class="sub-menu f-w-bold">(AFTER SALARY COME)</div>
+      <div class="mg-bt-15px">
+        <div class="menu f-w-600 bd-bt-st-solid">TODOLIST</div>
+        <div class="sub-menu f-w-600">(AFTER SALARY COME)</div>
+      </div>
       <div class="dp-flex f-drt-column al-it-flex-start w-100pct pd-5px">
         <div :key="index" v-for="(list, index) in todo" v-if="!list.checked">
-          <b-checkbox v-model="list.checked">{{list.list}} : {{list.price}}฿</b-checkbox>
+          <b-checkbox class="add-list" v-model="list.checked">{{list.list}} : {{list.price | currency}} ฿</b-checkbox>
         </div>
       </div>
-      <div class="dp-flex pd-5px cl-grey" v-if="ShowAddList"  @click="setShowAddList()">
-        <b-icon icon="plus"></b-icon>
-        List item
+      <div class="dp-flex pd-5px add-list f-w-600 cs-pointer" v-if="ShowAddList"  @click="setShowAddList()">
+        <b-icon icon="plus-circle"></b-icon>
+        &nbsp;Todo
       </div>
       <b-field v-else>
-        <b-input class="mg-5px" v-model="list" placeholder="Add List" @keyup.enter.native="addToList(list, price)"></b-input>
-        <b-input min="0" class="mg-5px w-30pct" v-model="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)"></b-input>
-        <button  class="button is-primary mg-5px" @click="addToList(list, price)">Add</button>
+        <input class="custom-input mg-5px" v-model="list" placeholder="Add List" @keyup.enter="addToList(list, price)"/>
+        <input min="0" class="custom-input mg-5px w-30pct" v-model="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)"/>
+        <button  class="button mg-7px add-btn" @click="addToList(list, price)">
+          <b-icon icon="plus"></b-icon>
+        </button>
       </b-field>
       <b-collapse :open="true" class="dp-flex f-drt-column al-it-flex-start w-100pct pd-5px">
-        <div slot="trigger" slot-scope="props">
+        <div class="f-w-600 add-list" slot="trigger" slot-scope="props">
           <b-icon icon="menu-down"></b-icon>
           Checked items
         </div>
         <div class="dp-flex f-drt-column al-it-flex-start w-100pct">
           <div :key="index" v-for="(list, index) in todo" v-if="list.checked">
-            <b-checkbox v-model="list.checked" style="text-decoration: line-through; color: grey;">{{list.list}} : {{list.price}}฿</b-checkbox>
+            <b-checkbox v-model="list.checked" style="text-decoration: line-through; color: #dadada;">{{list.list}} : {{list.price | currency}} ฿</b-checkbox>
           </div>
         </div>
       </b-collapse>
@@ -33,16 +37,22 @@
 </template>
 
 <script>
+import numeral from 'numeral'
 export default {
+  filters: {
+    currency (val) {
+      return numeral(val).format('0,0')
+    }
+  },
   data () {
     return {
-      ShowAddList: true,
+      ShowAddList: false,
       todo: [
         {list: 'check', price: 500, checked: true},
-        {list: 'gg', price: 500, checked: false}
+        {list: 'gg', price: 5000, checked: false}
       ],
       list: '',
-      price: 0
+      price: ''
     }
   },
   methods: {
@@ -74,11 +84,39 @@ export default {
 </script>
 
 <style scoped>
+.bg {
+  background: linear-gradient(to left, #b993d6, #8ca6db);
+}
 .menu {
   font-size: 2.25rem;
 }
 .sub-menu {
   font-size: 1rem;  
+}
+.add-list:hover {
+  color: #dadada;
+}
+
+.custom-input{
+  background-color: rgba(255, 255, 255, 0.1);
+  /* border-radius: 5px; */
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  border-width: 0px;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid white
+}
+.custom-input:focus {
+  outline: none;
+}
+.custom-input::placeholder {
+  color: #ebebeb;
+}
+
+.add-btn {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;  
 }
 </style>
 
