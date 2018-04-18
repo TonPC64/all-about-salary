@@ -10,7 +10,7 @@ script:
   - yarn build
 deploy:
   provider: surge
-  project: ./static/
+  project: ./dist/
   domain: ab-salary.surge.sh  
   skip-cleanup: true
   on:
