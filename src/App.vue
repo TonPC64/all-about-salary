@@ -30,6 +30,7 @@ body {
   border-radius: 20px;
   padding: 10px;
   position: relative;
+  width: 100vw;
 }
 @media only screen and (min-width: 412px)  {
   .app {
