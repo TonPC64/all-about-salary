@@ -14,13 +14,13 @@
         <b-icon icon="plus-circle"></b-icon>
         &nbsp;Todo
       </div>
-      <b-field v-else>
-        <input class="custom-input mg-5px" v-model="list" placeholder="Add List" @keyup.enter="addToList(list, price)"/>
-        <input min="0" class="custom-input mg-5px w-40pct" v-model="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)"/>
-        <button  class="button mg-7px add-btn" @click="addToList(list, price)">
+      <div v-else class="" >
+        <input class="custom-input mg-5px w-45pct" v-model="list" placeholder="Add List" @keyup.enter="addToList(list, price)"/>
+        <input min="0" class="custom-input w-30pct mg-5px" v-model="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)"/>
+        <button  class="button f-none mg-7px add-btn" @click="addToList(list, price)">
           <b-icon icon="plus"></b-icon>
         </button>
-      </b-field>
+      </div>
       <b-collapse :open="true" class="dp-flex f-drt-column al-it-flex-start w-100pct pd-5px">
         <div class="f-w-600 add-list" slot="trigger" slot-scope="props">
           <b-icon icon="menu-down"></b-icon>
@@ -99,7 +99,6 @@ export default {
 
 .custom-input{
   background-color: rgba(255, 255, 255, 0.1);
-  /* border-radius: 5px; */
   color: white;
   padding: 10px;
   font-size: 15px;

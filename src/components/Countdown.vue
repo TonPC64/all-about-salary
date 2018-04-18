@@ -73,10 +73,10 @@ export default {
   },
   methods: {
     save () {
-      window.localStorage.setItem('salary', JSON.stringify(this['_data']))
+      localStorage.setItem('salary', JSON.stringify(this['_data']))
     },
     load () {
-      const localData = window.localStorage.getItem('salary')
+      const localData = localStorage.getItem('salary')
       if (localData) {
         const localJson = JSON.parse(localData)
         Object.keys(localJson).forEach(key => {
@@ -101,6 +101,7 @@ export default {
   margin: 0px !important;
 }
 .top {
+  font-size: 1.8rem;
   font-weight: bolder;
   padding: 5px;
 }
