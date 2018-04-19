@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Home from './components/Home'
 import Countdown from './components/Countdown'
 import TodoList from './components/TodoList'
+import Setting from './components/Setting'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/todo',
     name: 'todo',
     component: TodoList
+  },
+  {
+    path: '/setting',
+    name: 'setting',
+    component: Setting
   }
 ]
 
