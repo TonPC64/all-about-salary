@@ -1,4 +1,6 @@
-# countdown-salary
+# All About Salary
+
+[![Build Status](https://travis-ci.org/TonPC64/all-about-salary.svg?branch=master)](https://travis-ci.org/TonPC64/all-about-salary)
 
 > A Vue.js project
 
