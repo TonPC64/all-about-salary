@@ -17,28 +17,24 @@
     <div class="money cl-white">
       ใช้เงินได้วันละ
       <div class="money-number" :class="{'green': perday >= 150, 'red': perday < 100}">{{perday}}</div>
-       บาท
+      บาท
     </div>
     <section class="columns is-mobile mg-t-5px">
-        <b-field class="column" label="เงินเดือนจะเข้า">
-            <b-select v-model="select" placeholder="เลือกวันที่">
-                <option
-                    v-for="date in 31"
-                    :value="date"
-                    :key="date">
-                    วันที่ {{ date }}
-                </option>
-            </b-select>
-        </b-field>
-        <b-field class="column" label="เหลือเงิน">
-          <b-input v-model="money"></b-input>
-        </b-field>
+      <b-field class="column" label="เงินเดือนจะเข้า">
+        <b-select v-model="select" placeholder="เลือกวันที่">
+          <option v-for="date in 31" :value="date" :key="date">
+            วันที่ {{ date }}
+          </option>
+        </b-select>
+      </b-field>
+      <b-field class="column" label="เหลือเงิน">
+        <b-input v-model="money"></b-input>
+      </b-field>
     </section>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'hello',
   data () {
@@ -109,7 +105,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFF;
+  color: #fff;
   font-size: 2.1rem;
 }
 .green {
@@ -119,15 +115,14 @@ export default {
   color: #ff0040;
 }
 .money-number {
-  margin:0 5px;
+  margin: 0 5px;
   font-weight: bold;
 }
 .count {
   font-size: 11rem;
-  background: -webkit-linear-gradient(90deg, hsl(48, 100%, 67%), white	, hsl(48, 100%, 67%));
+  background: -webkit-linear-gradient(90deg, hsl(48, 100%, 67%), white, hsl(48, 100%, 67%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 .flex {
   display: flex;
