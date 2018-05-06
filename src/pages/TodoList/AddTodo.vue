@@ -1,13 +1,13 @@
 <template>
-  <div class="mg-5px">
+  <div class="">
     <div class="dp-flex pd-5px add-list f-w-600 cs-pointer" v-if="ShowAddList" @click="ShowAddList = false">
       <b-icon icon="plus-circle"></b-icon>
       <span>Todo</span>
     </div>
-    <div v-else class="columns pd-vtc-5px">
+    <div v-else class="is-mobile columns pd-vtc-5px">
       <input class="column custom-input mg-5px w-45pct" v-model="list" placeholder="Add List" @keyup.enter="addToList(list, price)" />
       <input min="0" class="custom-input w-30pct mg-5px" v-model.number="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)" />
-      <button class="button f-none mg-7px add-btn" @click="addToList(list, price)">
+      <button class="button f-none mg-vtc-7px mg-hrzt-5px add-btn" @click="addToList(list, price)">
         <b-icon icon="plus"></b-icon>
       </button>
     </div>
@@ -18,7 +18,7 @@
 export default {
   data () {
     return {
-      ShowAddList: true,
+      ShowAddList: false,
       list: 'add',
       price: '99'
     }

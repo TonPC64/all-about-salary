@@ -15,7 +15,7 @@
           <div :key="index" v-for="(list, index) in todo" v-if="!list.checked">
             <b-checkbox class="add-list" v-model="list.checked">{{list.list}} : {{list.price | currency}} ฿</b-checkbox>
           </div>
-          <div class="w-100pct dp-flex jtf-ct-center">
+          <div class="w-100pct mg-vtc-5px dp-flex jtf-ct-center">
             <AddTodo @insert="addToList" />
           </div>
         </div>
