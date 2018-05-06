@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from './components/Home'
-import Countdown from './components/Countdown'
-import TodoList from './components/TodoList'
-import Setting from './components/Setting'
-import Electricity from './components/Electricity'
+import Home from './pages/Home'
+import Countdown from './pages/Countdown'
+import TodoList from './pages/TodoList'
+import Setting from './pages/Setting'
+import Electricity from './pages/Electricity'
 
 Vue.use(Router)
 
