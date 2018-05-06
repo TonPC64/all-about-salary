@@ -20,14 +20,14 @@
       บาท
     </div>
     <section class="columns is-mobile mg-t-5px">
-      <b-field class="column" label="เงินเดือนจะเข้า">
+      <b-field class="column" label="เงินเดือนจะเข้า" expanded>
         <b-select v-model="select" placeholder="เลือกวันที่">
           <option v-for="date in 31" :value="date" :key="date">
             วันที่ {{ date }}
           </option>
         </b-select>
       </b-field>
-      <b-field class="column" label="เหลือเงิน">
+      <b-field class="column" label="เหลือเงิน" expanded>
         <b-input v-model="money"></b-input>
       </b-field>
     </section>

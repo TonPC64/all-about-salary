@@ -1,9 +1,13 @@
 <template>
   <div class="dp-flex f-drt-column jtf-ct-center h-10calc pd-bt-70px app bg">
+    <div class="dp-flex jtf-ct-center">
+      <img src="/static/images/icons/icon-384x384.png" width="260" alt="">
+    </div>
     <h1 class="title has-text-centered f-w-600 is-uppercase">All About Salary</h1>
     <router-link class="button is-primary is-large mg-bt-8px" :to="{name: 'countdown'}">Countdown</router-link>
-    <router-link class="button is-success is-large mg-bt-8px" disabled :to="{name: 'todo'}">Month Todolist</router-link>    
-    <router-link class="button is-info is-large mg-bt-8px" disabled :to="{name: 'setting'}">Setting</router-link>    
+    <router-link class="button is-success is-large mg-bt-8px" disabled :to="{name: 'todo'}">Month Todolist</router-link>
+    <router-link class="button is-danger is-large mg-bt-8px" disabled :to="{name: 'electricity'}">Electricity</router-link>
+    <router-link class="button is-info is-large mg-bt-8px" disabled :to="{name: 'setting'}">Setting</router-link>
   </div>
 </template>
 
