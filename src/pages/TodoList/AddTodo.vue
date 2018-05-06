@@ -6,7 +6,7 @@
     </div>
     <div v-else class="columns pd-vtc-5px">
       <input class="column custom-input mg-5px w-45pct" v-model="list" placeholder="Add List" @keyup.enter="addToList(list, price)" />
-      <input min="0" class="custom-input w-30pct mg-5px" v-model="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)" />
+      <input min="0" class="custom-input w-30pct mg-5px" v-model.number="price" type="number" placeholder="Price" @keyup.enter.native="addToList(list, price)" />
       <button class="button f-none mg-7px add-btn" @click="addToList(list, price)">
         <b-icon icon="plus"></b-icon>
       </button>
