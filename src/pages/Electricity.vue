@@ -11,6 +11,10 @@
       <label class="label">เลขมิเตอร์ล่าสุด</label>
       <input :min="lastBill" type="number" @input="save()" class="input is-large" v-model.number="now" placeholder="เลขมิเตอร์ล่าสุด">
     </div>
+    <div class="mg-50px f-s-75px has-text-centered dp-flex f-drt-column">
+      <span>{{electricUnit}}</span>
+      <span>{{electricUnit*8}} ฿</span>
+    </div>
   </div>
 </template>
 
@@ -25,7 +29,7 @@ export default {
   },
   computed: {
     electricUnit () {
-      return +this.lastBill - +this.now
+      return +this.now - +this.lastBill
     }
   },
   methods: {
