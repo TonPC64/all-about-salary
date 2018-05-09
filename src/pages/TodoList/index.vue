@@ -4,12 +4,13 @@
       <div class="mg-bt-15px">
         <div class="menu f-w-600 bd-bt-st-solid">TODOLIST</div>
         <div class="sub-menu f-w-600">(AFTER SALARY COME)</div>
-        <div class="t-al-center f-w-600 mg-t-10px">
-          <button class="button is-small btn" @click="previousMonth()" v-html="'<<'"></button>
-          <span class="mg-hrzt-5px">{{thisMonth}}</span>
-          <button class="button is-small btn" @click="forwardMonth()" v-html="'>>'"></button>
-        </div>
       </div>
+      <div class="t-al-center f-w-600 mg-bt-15px">
+        <button class="button is-small btn" @click="previousMonth()" v-html="'<<'"></button>
+        <span class="mg-hrzt-5px">{{thisMonth}}</span>
+        <button class="button is-small btn" @click="forwardMonth()" v-html="'>>'"></button>
+      </div>
+
       <div class="w-100pct">
         <div class="dp-flex f-drt-column al-it-flex-start w-100pct pd-5px bd-w-0px bd-bt-w-1px bd-st-solid bd-cl-gray">
           <div :key="index" v-for="(list, index) in todo" v-if="!list.checked">
@@ -58,7 +59,10 @@ export default {
   },
   computed: {
     thisMonth () {
-      return this.$moment().month(this.now.month).year(this.now.year).format('MMMM Y')
+      return this.$moment()
+        .month(this.now.month)
+        .year(this.now.year)
+        .format('MMMM Y')
     }
   },
   methods: {
@@ -69,7 +73,9 @@ export default {
       this.addMonth(1)
     },
     addMonth (value) {
-      let thisMonth = this.$moment().month(this.now.month).year(this.now.year)
+      let thisMonth = this.$moment()
+        .month(this.now.month)
+        .year(this.now.year)
       thisMonth.add(value, 'month')
       this.now = {
         month: thisMonth.month(),
