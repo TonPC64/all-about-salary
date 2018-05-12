@@ -11,7 +11,6 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "begeta": "^0.1.17",
     "buefy": "^0.6.2",
     "bulma": "^0.6.2",
     "mdi": "^2.2.43",
